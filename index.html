@@ -1,1 +1,24 @@
-hi
+<html>
+<head>
+    <title>Dynamically add Image to a DIV Element using jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="show_images" style="width:auto;"></div>
+</body>
+
+<script>
+    $(document).ready(function () {
+	
+	const zeroPad = (num, places) => String(num).padStart(places, '0')
+	for (let i = 1; i < 40; i++) {
+		var imgname = "sdh-" + zeroPad(i, 2) + ".png";
+		var img = $('<img id="' + imgname + '">');
+		img.attr('src', 'images/' + imgname );
+		img.appendTo('#show_images');
+	}
+	
+	});
+</script>
+</html>
